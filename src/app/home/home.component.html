@@ -5,6 +5,10 @@
 </app-categories>
 
 <div class="row">
+    <div>
+    <input [(ngModel)]="searchTerm" type="text" class="form-control w-75 mx-auto my-4" placeholder="search by name ...">
+
+    </div>
     <div *ngFor="let product of products" class="col-md-2">
         <div class="product px-2 py-4">
             <a [routerLink]= "['/productdetails', product._id]" class="text-decoration-none">
@@ -18,9 +22,10 @@
                     <span class="text-muted fw-bold font-sm">{{product.ratingsAverage}} </span>
                 </div>
             </div>
-            <button class="btn bg-main text-white w-100 text-center my-2">+ Add</button>
 
         </a>
+        <button (click)="addToCart(product._id)" class="btn bg-main text-white w-100 text-center my-2">+ Add</button>
+
         </div>
     </div>
 </div>

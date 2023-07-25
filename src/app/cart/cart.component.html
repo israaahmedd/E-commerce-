@@ -1,1 +1,36 @@
-<p>cart works!</p>
+<div class="bg-main-light p-4 my-4">
+    <h3>shop cart</h3>
+    <h6 class="text-main">total price:{{cartDetails?.totalCartPrice}} EGP</h6>
+
+    <div *ngFor="let product of cartDetails?.products" class="row align-items-center border-bottom py-3">
+        <div class="col-md-1">
+            <img [src]="product?.product?.imageCover" alt="" class="w-100">
+        </div>
+        <div class="col-md-11 d-flex justify-content-between">
+            <div>
+                <h4>{{product.product.title}}</h4>
+                <h6 class="text-main">price:{{product.price}}</h6>
+                <button class="btn m-0 p-0" (click)="removeItem(product.product.id)">
+                    <i class=" fa-trash-can fa-regular text-main"></i> Remove
+                </button>
+            </div>
+            <div>
+                <button class="btn border-main btn-sm" (click)="updateItemCount(product.product.id,product.count+1)"> + </button>
+                <span class="mx-2">{{product.count}}</span>
+                <button class="btn border-main btn-sm" (click)="updateItemCount(product.product.id,product.count-1)">-</button>
+            </div>
+           
+
+    
+          
+        </div>
+
+
+    </div>
+    <button class="bg-main btn  w-25 my-3">
+        <a href="" routerLink="/checkout" class="text-decoration-none text-white">
+        Online Payment <img src="../../assets/images/V.png" alt="" class="w-25">
+
+        </a>
+    </button>
+</div>

@@ -34,7 +34,7 @@ this ._AuthService.register(registerForm.value).subscribe({
 
     {
 this.isLoading=false;      
-this ._Router.navigate(['/login'])
+this ._Router.navigate(['/login']) 
     }
     
   },

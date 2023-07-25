@@ -1,10 +1,10 @@
 <div class="w-75 mx-auto py-4">
-    <h4>Register Now</h4>
+    <h4 class="fw-bold pb-4">Login Now</h4>
     <div *ngIf="apiError.length>0" class="alert alert-danger">
         {{apiError}}
     </div>
-    <form (ngSubmit)="handeLogin(loginForm)" [formGroup]="loginForm">
-        <h2>{{loginForm.get('name')?.getError('minlength')|json}}</h2>
+    <form (ngSubmit)="handleLogin(loginForm)" [formGroup]="loginForm">
+        <!-- <h2>{{loginForm.get('name')?.getError('minlength')|json}}</h2> -->
        
 
         <label for="email">email:</label>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import{FormGroup, FormControl , Validators} from "@angular/forms";
+import{FormGroup, FormControl , Validators} from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 @Component({
@@ -19,8 +19,8 @@ export class LoginComponent {
     email: new FormControl(null, [Validators.required,Validators.email]),
     password : new FormControl(null,[Validators.required,Validators.pattern(/^[A-Z][a-z0-9]{5,10}$/)]),
 
-  })
-  handeLogin(loginForm:FormGroup)
+  });
+  handleLogin(loginForm:FormGroup)
   {
     this.isLoading=true;
     if(loginForm.valid)
@@ -32,7 +32,7 @@ export class LoginComponent {
     {
      if(response.message === "success")
      {
-      localStorage.setItem('userToken',response.Token)
+      localStorage.setItem('userToken',response.token)
       this._AuthService.decodeUserData();
        this.isLoading=false;      
        this ._Router.navigate(['/home'])
@@ -40,7 +40,7 @@ export class LoginComponent {
     
   },
   error:(err)=>{
-    this.isLoading=false
+    this.isLoading=false;
   // console.log(err.error.errors.msg)
   this.apiError=err.error.errors.msg;
   }

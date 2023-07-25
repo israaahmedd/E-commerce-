@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { CartService } from '../cart.service';
+
 
 
 @Component({
@@ -12,8 +14,12 @@ export class NavbarComponent {
     this._AuthService.logOut();
   }
   isLogin:boolean=false;
-  constructor (private _AuthService:AuthService)
+  cartNumber:number=0;
+  constructor (private _AuthService:AuthService, private _CartService:CartService)
   {
+    _CartService.numOfCartItems.subscribe({
+      next:(value)=>this.cartNumber=value
+    })
       _AuthService.userData.subscribe({
         next:()=>{
           if(_AuthService.userData.getValue() !==null)

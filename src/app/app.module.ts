@@ -11,13 +11,16 @@ import { CategoriesComponent } from './categories/categories.component';
 import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { FooterComponent } from './footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
 import{HttpClientModule}from '@angular/common/http';
 import {ProductdetailsComponent } from './productdetails/productdetails.component';
 import{BrowserAnimationsModule}from '@angular/platform-browser/animations';
 import{CarouselModule}from 'ngx-owl-carousel-o';
 import { MainSliderComponent } from './main-slider/main-slider.component';
+
+import { CheckoutComponent } from './checkout/checkout.component';
+
 
 
 
@@ -36,6 +39,8 @@ import { MainSliderComponent } from './main-slider/main-slider.component';
     SignupComponent,
     ProductdetailsComponent,
     MainSliderComponent,
+    CheckoutComponent,
+    
  
   ],
   imports: [
@@ -45,6 +50,7 @@ import { MainSliderComponent } from './main-slider/main-slider.component';
     HttpClientModule,
     BrowserAnimationsModule, 
     CarouselModule,
+    FormsModule
   
   ],
   providers: [],

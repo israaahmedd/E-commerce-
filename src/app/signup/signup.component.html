@@ -4,7 +4,7 @@
         {{apiError}}
     </div>
     <form (ngSubmit)="handelRegister(registerForm)" [formGroup]="registerForm">
-        <h2>{{registerForm.get('name')?.getError('minlength')|json}}</h2>
+      
         <label for="name">name:</label>
         <input type="text" formControlName="name" class="form-control mb-2" id="name">
         <div *ngIf="registerForm.get('name')?.errors &&registerForm.get('name')?.touched " class="alert alert-danger">
