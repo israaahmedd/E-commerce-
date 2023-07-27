@@ -10,21 +10,22 @@ import { LoginComponent } from './login/login.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { SignupComponent } from './signup/signup.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { authGuard } from './auth.guard';
+
+
 
 const routes: Routes = [
   {path:'',redirectTo:'signup',pathMatch:'full'},
-  {path:'home',component:HomeComponent},
-  {path:'about',component:AboutComponent},
-  {path:'categories',component:CategoriesComponent},
-  {path:'cart',component:CartComponent},
-  {path:'checkout',component:CheckoutComponent},
-
-  {path:'brands',component:BrandsComponent},
+  {path:'home',canActivate:[authGuard],component:HomeComponent},
+  {path:'about',canActivate:[authGuard],component:AboutComponent},
+  {path:'categories',canActivate:[authGuard],component:CategoriesComponent},
+  {path:'cart',canActivate:[authGuard],component:CartComponent},
+  {path:'checkout',canActivate:[authGuard],component:CheckoutComponent},
+  {path:'brands',canActivate:[authGuard],component:BrandsComponent},
   {path:'login',component:LoginComponent},
   {path:'productdetails/:id',component:ProductdetailsComponent},
   {path:'signup',component:SignupComponent},
   {path:'settings',loadChildren:()=>import('./settings/settings.module').then((m)=>m.SettingsModule)},
-
   {path:'**',component:NotfoundComponent},
 ];
 

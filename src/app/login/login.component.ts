@@ -41,7 +41,7 @@ export class LoginComponent {
   },
   error:(err)=>{
     this.isLoading=false;
-  // console.log(err.error.errors.msg)
+   console.log(err.error.errors.msg)
   this.apiError=err.error.errors.msg;
   }
 })

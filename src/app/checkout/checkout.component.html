@@ -1,4 +1,4 @@
-<div class="w-50  m-auto my-5 pt-5 " style="height:60vh;">
+<div class=" w-50 my-5 d-flex align-items-center justify-content-center " style="height:auto;">
 <form [formGroup]="shippingAdress" (ngSubmit)="handelSubmit(shippingAdress)">
     <label for="detailes">Detailes:</label>
     <input type="text" formControlName="detailes" class="form-control mb-2" id="detailes">
@@ -7,7 +7,5 @@
     <label for="city">city:</label>
     <input type="text" formControlName="city" class="form-control mb-2" id="city">
     <button class="btn bg-main text-white" type="submit">pay</button>
-    
-
 </form>
 </div>

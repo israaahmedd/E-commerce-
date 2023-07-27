@@ -27,7 +27,7 @@ export class SignupComponent {
     this.isLoading=true;
     if(registerForm.valid)
     {
-this ._AuthService.register(registerForm.value).subscribe({
+this._AuthService.register(registerForm.value).subscribe({
   next:(response)=>
     {
      if(response.message === "success")

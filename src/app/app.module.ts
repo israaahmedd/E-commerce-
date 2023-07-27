@@ -13,13 +13,13 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './signup/signup.component';
-import{HttpClientModule}from '@angular/common/http';
+import{HTTP_INTERCEPTORS, HttpClientModule}from '@angular/common/http';
 import {ProductdetailsComponent } from './productdetails/productdetails.component';
 import{BrowserAnimationsModule}from '@angular/platform-browser/animations';
 import{CarouselModule}from 'ngx-owl-carousel-o';
 import { MainSliderComponent } from './main-slider/main-slider.component';
-
 import { CheckoutComponent } from './checkout/checkout.component';
+// import { HeaderInterceptor } from './header.interceptor';
 
 
 
@@ -53,7 +53,13 @@ import { CheckoutComponent } from './checkout/checkout.component';
     FormsModule
   
   ],
-  providers: [],
+  providers: [
+// {
+// provide:HTTP_INTERCEPTORS,
+// useClass:HeaderInterceptor,
+// multi:true
+// },
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
